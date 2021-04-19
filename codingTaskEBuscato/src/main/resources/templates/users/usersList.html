@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+    
+<title>Users List</title>
+</head>
+<body>
+
+
+<div class = "center">
+ 
+	<p class = "title">SELECTION</p>
+	<p class = "format">Select <strong>PHOTO</strong> or <strong>POST</strong> to manage elements.</p>
+	<hr>
+</div>
+
+<div class = "center">
+
+	<table> 
+	    <tr>    	        
+	        <th>Usernames</th>    
+	    </tr>
+	    <tr th:each="user, stat : ${usersList}">    
+	        
+	        <td th:text="${user.username}"></td> 
+	            <td >
+	            
+	    	   <a th:href="@{'/albumsList/' + ${user.id}}">	    	
+					<img src="/images/photo_ico.png" alt="Albums list" width="30" height="30"> 
+	    	   </a>
+	    	   
+	    	    <a th:href="@{'/postsList/' + ${user.id}}">
+	    	    	<img src="/images/post_ico.png" alt="Posts list" width="30" height="30"> 	      
+	      		</a>
+	        </td>
+	    </tr>
+	</table>
+
+</div>
+
+</body>
+</html>

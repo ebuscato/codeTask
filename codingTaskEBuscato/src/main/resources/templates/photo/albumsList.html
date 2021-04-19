@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+    
+<title>AlbumsList</title>
+</head>
+<body>
+
+<div class = "center">
+ 
+	<p class = "title">ALBUMS</p>
+	<p class = "format">Select an album to see the photos.</p>		
+	<hr>
+</div>
+<div class = "center">
+		<form th:action="@{/exportAlbumToJson/} + ${userId}">
+		    <input type="submit" value="Export to JSON" />
+		</form>
+		
+		<hr>
+</div>
+<div class = "center">
+
+	<table> 	
+	    <tr th:each="album, stat : ${albumsList}">    
+	        
+	        <td th:text="${album.title}"></td> 
+	            <td >
+	            
+	    	   <a th:href="@{'/photosList/' + ${album.id}}">	    	
+					<img src="/images/photo_ico.png" alt="Photos" width="30" height="30"> 
+	    	   </a>    	   
+	 
+	        </td>
+	    </tr>
+	</table>
+
+</div>
+<div class = "center">			
+		<hr>		
+		<form th:action="@{/usersList}">
+		    <input type="submit" value="Home" />
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@charset "ISO-8859-1";
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom:0px;
+   
+}
+
+p.title {
+    font-family: sans-serif;
+    font-size: 1.5em;    
+    color:#000080;
+}
+
+p.format{
+	 font-family: sans-serif;
+}
+
+label.format{
+	 font-family: sans-serif;
+	   font-size: 0.8em;   
+}
+
+p.tumbnail{
+	 font-family: sans-serif;
+	 font-size: 0.7em; 
+}
+
+div.center {
+	text-align: center;
+	margin: auto;
+	
+}
+
+table {
+  margin: 0 auto
+}
+
+th, td {	
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+a:link {
+  color: navy;
+}
+a:visited {
+  color: grey;
+}
+
+a:hover {
+  color: black;
+}
+
+.cols {
+        width:20%;
+        float:left;
+        text-align: right;
+    }
+.rows {
+      height:30px;
+}

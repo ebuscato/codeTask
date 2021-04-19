@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+    
+<title>photosList</title>
+</head>
+<body>
+
+
+<div class = "center">
+ 
+	<p class = "title">PHOTOS</p>
+	<p class = "format">Select a photo to update it.</p>		
+	<hr>
+</div>
+<div class = "center">
+		<form th:action="@{/exportPhotosToJson/} + ${albumId}">
+		    <input type="submit" value="Export to JSON" />
+		</form>
+		
+		<hr>
+</div>
+<div class = "center">
+
+	<table> 	
+	    <tr th:each="photo, stat : ${photosList}">   	        
+	            
+	    	   <a th:href="@{'/photoData/' + ${photo.id}}">	    	
+					<img th:src="${photo.thumbnailUrl}" alt="${photo.title}" height="100">
+					  
+					  <p class = "tumbnail"><span th:text="${photo.title}" th:remove="tag"></span></p> 
+	    	   </a>    	   
+	 
+	        </td>
+	    </tr>
+	</table>
+
+</div>
+<div class = "center">			
+		<hr>		
+		<form th:action="@{/usersList}">
+		    <input type="submit" value="Home" />
+		</form>
+	</div>
+</body>
+</html>
