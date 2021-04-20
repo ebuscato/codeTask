@@ -1,13 +1,8 @@
 package com.rindus.rt6.codingTaskEBuscato.util.file;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 
 public class FileUtil {	
 	

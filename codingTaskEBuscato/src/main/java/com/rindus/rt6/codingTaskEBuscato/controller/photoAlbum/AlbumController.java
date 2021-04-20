@@ -76,11 +76,9 @@ public class AlbumController {
 	public String exportAlbumsListToJson(HttpServletResponse response,  @PathVariable int id) {
 		
 		
-		Album[] albumsList = getAlbumsList(id);	
+		Album[] albumsList = getAlbumsList(id);			
 		
-		String json ="";
-		
-		json = JsonConverter.getJsonContent(albumsList, json);
+		String json = JsonConverter.getJsonContent(albumsList);
 		
 		
 		FileUtil.saveFile(response, rest_api_albums+export_json_filename, json);
@@ -101,11 +99,9 @@ public class AlbumController {
 	public String exportPhotosListToJson(HttpServletResponse response,  @PathVariable int id) {
 		
 		
-		Photo[] photosList = getPhotosList(id);	
+		Photo[] photosList = getPhotosList(id);			
 		
-		String json ="";
-		
-		json = JsonConverter.getJsonContent(photosList, json);
+		String json = JsonConverter.getJsonContent(photosList);
 		
 		
 		FileUtil.saveFile(response,rest_api_photos+export_json_filename, json);

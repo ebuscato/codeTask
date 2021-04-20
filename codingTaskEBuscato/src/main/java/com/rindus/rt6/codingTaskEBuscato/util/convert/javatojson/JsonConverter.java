@@ -12,10 +12,24 @@ public class JsonConverter {
 	 * @param content
 	 * @return
 	 */
-	public static String getJsonContent(Object[] elementsList, String content) {
+	public static String getJsonContent(Object[] elementsList) {
 		ObjectMapper mapper = new ObjectMapper();
+		String content = "";
 		try {
 			content = mapper.writeValueAsString(elementsList);	   
+		   
+	
+		} catch (JsonProcessingException e) {
+		   e.printStackTrace();
+		}
+		return content;
+	}
+	
+	public static String getJsonContent(Object element) {
+		ObjectMapper mapper = new ObjectMapper();
+		String content = "";
+		try {
+			content = mapper.writeValueAsString(element);	   
 		   
 	
 		} catch (JsonProcessingException e) {
